@@ -1,8 +1,13 @@
 <?php
 
-class DataBase{
-    public static function connect(){
-        $db = new mysqli('localhost:3307', 'root', 'nucll', 'tienda_master');
+class DataBase {
+    public static function connect() {
+        $host = 'localhost:3307';
+        $user = 'root';
+        $pass = 'nucll';
+        $db_name = 'tienda_master';
+
+        $db = new mysqli($host, $user, $pass, $db_name);
         $db->query("SET NAMES 'utf8'");
         return $db;
     }
